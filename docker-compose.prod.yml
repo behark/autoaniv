@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    environment:
+      - REACT_APP_API_URL=${API_URL}
+      - REACT_APP_UPLOAD_URL=${UPLOAD_URL}
+    depends_on:
+      - backend
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile.prod
+    environment:
+      - REACT_APP_API_URL=${API_URL}
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET}
+      - UPLOAD_PATH=/app/uploads
+      - CLIENT_URL=${CLIENT_URL}
+      - ADMIN_URL=${ADMIN_URL}
+    depends_on:
+      - mongo
+    volumes:
+      - uploads-data:/app/uploads
+
+  mongo:
+    image: mongo:7.0
+    environment:
+      - MONGO_INITDB_DATABASE=autoani
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf
+      - uploads-data:/var/www/uploads
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - frontend
+      - admin
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+  uploads-data:
