@@ -8,6 +8,7 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import Pagination from '@/components/ui/Pagination';
 import VehicleCard from '@/components/vehicles/VehicleCard';
 import VehicleFilters from '@/components/vehicles/VehicleFilters';
+import { vehiclesApi } from '@/services/api';
 import type { Vehicle, VehicleFilter } from '@/types';
 
 export default function VehiclesPage() {
@@ -23,16 +24,17 @@ export default function VehiclesPage() {
   });
   const [showFilters, setShowFilters] = useState(false);
 
-  const fetchVehicles = async (filters: VehicleFilter = {}, page = 1) => {
+  const fetchVehicles = async (_filters: VehicleFilter = {}, _page = 1) => {
     setLoading(true);
     try {
-      const response = await vehiclesApi.getAll({
-        ...filters,
-        page,
-        limit: pagination.limit
+      const response = await vehiclesApi.getAll();
+      setVehicles(response.data);
+      setPagination({
+        current: 1,
+        pages: 1,
+        total: response.data.length,
+        limit: 12
       });
-      setVehicles(response.data.data);
-      setPagination(response.data.pagination);
     } catch (error) {
       console.error('Failed to fetch vehicles:', error);
     } finally {
