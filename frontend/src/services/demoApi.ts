@@ -1,17 +1,19 @@
 // Demo data service for immediate deployment
-export const demoVehicles = [
+import type { Brand, Vehicle } from '@/types';
+
+export const demoVehicles: Vehicle[] = [
   {
-    id: "1",
+    _id: "1",
     title: "Mercedes-Benz S-Class S63 AMG",
     brand: "Mercedes-Benz",
     model: "S-Class",
     year: 2024,
     price: 120000,
-    currency: "EUR",
+    currency: "EUR" as const,
     mileage: 5000,
-    transmission: "Automatic",
-    fuelType: "Petrol",
-    bodyType: "Sedan",
+    transmission: "Automatic" as const,
+    fuelType: "Petrol" as const,
+    bodyType: "Sedan" as const,
     color: "Black",
     engineSize: 4.0,
     horsepower: 630,
@@ -19,13 +21,14 @@ export const demoVehicles = [
     features: ["Leather Seats", "Navigation System", "Sunroof", "Bluetooth", "Premium Sound", "Heated Seats"],
     images: [
       {
+        _id: "img1",
         url: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800",
         alt: "Mercedes S63 AMG Front View",
         isPrimary: true,
         order: 1
       }
     ],
-    status: "Available",
+    status: "Available" as const,
     featured: true,
     slug: "mercedes-benz-s-class-s63-amg",
     seoTitle: "Mercedes-Benz S63 AMG - Luxury Sedan for Sale",
@@ -35,17 +38,17 @@ export const demoVehicles = [
     updatedAt: new Date().toISOString()
   },
   {
-    id: "2",
+    _id: "2",
     title: "BMW X5 M50i xDrive",
     brand: "BMW",
     model: "X5",
     year: 2023,
     price: 85000,
-    currency: "EUR",
+    currency: "EUR" as const,
     mileage: 12000,
-    transmission: "Automatic",
-    fuelType: "Petrol",
-    bodyType: "SUV",
+    transmission: "Automatic" as const,
+    fuelType: "Petrol" as const,
+    bodyType: "SUV" as const,
     color: "Alpine White",
     engineSize: 4.4,
     horsepower: 523,
@@ -53,13 +56,14 @@ export const demoVehicles = [
     features: ["All-Wheel Drive", "Panoramic Roof", "Premium Audio", "Navigation", "Heated Seats", "Wireless Charging"],
     images: [
       {
+        _id: "img2",
         url: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800",
         alt: "BMW X5 Front View",
         isPrimary: true,
         order: 1
       }
     ],
-    status: "Available",
+    status: "Available" as const,
     featured: true,
     slug: "bmw-x5-m50i-xdrive",
     seoTitle: "BMW X5 M50i xDrive - Premium SUV for Sale",
@@ -69,17 +73,17 @@ export const demoVehicles = [
     updatedAt: new Date().toISOString()
   },
   {
-    id: "3",
+    _id: "3",
     title: "Audi A8 60 TFSI quattro",
     brand: "Audi",
     model: "A8",
     year: 2024,
     price: 95000,
-    currency: "EUR",
+    currency: "EUR" as const,
     mileage: 8000,
-    transmission: "Automatic",
-    fuelType: "Petrol",
-    bodyType: "Sedan",
+    transmission: "Automatic" as const,
+    fuelType: "Petrol" as const,
+    bodyType: "Sedan" as const,
     color: "Phantom Black",
     engineSize: 4.0,
     horsepower: 460,
@@ -87,13 +91,14 @@ export const demoVehicles = [
     features: ["quattro AWD", "Virtual Cockpit", "Matrix LED", "Massage Seats", "Bang & Olufsen", "Adaptive Suspension"],
     images: [
       {
+        _id: "img3",
         url: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800",
         alt: "Audi A8 Front View",
         isPrimary: true,
         order: 1
       }
     ],
-    status: "Available",
+    status: "Available" as const,
     featured: false,
     slug: "audi-a8-60-tfsi-quattro",
     seoTitle: "Audi A8 60 TFSI quattro - Executive Luxury Sedan",
@@ -104,59 +109,41 @@ export const demoVehicles = [
   }
 ];
 
-export const demoBrands = [
+export const demoBrands: Brand[] = [
   {
-    id: "1",
+    _id: "1",
     name: "Mercedes-Benz",
     logo: "https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png",
     description: "Luxury German automotive manufacturer known for innovation and quality",
     featured: true,
-    vehicleCount: 8,
-    slug: "mercedes-benz",
-    seoTitle: "Mercedes-Benz Vehicles - Luxury Cars for Sale",
-    seoDescription: "Browse our selection of premium Mercedes-Benz vehicles. Luxury, performance, and innovation.",
-    seoKeywords: ["Mercedes-Benz", "luxury cars", "German engineering"],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    vehicleCount: 8
   },
   {
-    id: "2",
+    _id: "2",
     name: "BMW",
     logo: "https://logos-world.net/wp-content/uploads/2020/03/BMW-Logo.png",
     description: "Premium German luxury vehicles with ultimate driving pleasure",
     featured: true,
-    vehicleCount: 6,
-    slug: "bmw",
-    seoTitle: "BMW Vehicles - The Ultimate Driving Machine",
-    seoDescription: "Discover our BMW collection. Premium vehicles that deliver the ultimate driving experience.",
-    seoKeywords: ["BMW", "luxury vehicles", "ultimate driving"],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    vehicleCount: 6
   },
   {
-    id: "3",
+    _id: "3",
     name: "Audi",
     logo: "https://logos-world.net/wp-content/uploads/2021/03/Audi-Logo.png",
     description: "German luxury automobile manufacturer with Vorsprung durch Technik",
     featured: true,
-    vehicleCount: 5,
-    slug: "audi",
-    seoTitle: "Audi Vehicles - Vorsprung durch Technik",
-    seoDescription: "Explore our Audi lineup. Advanced technology meets luxury design.",
-    seoKeywords: ["Audi", "technology", "luxury automotive"],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    vehicleCount: 5
   }
 ];
 
 // Demo API service that works without backend
 export const demoApi = {
   getVehicles: () => Promise.resolve({ data: demoVehicles }),
-  getVehicle: (id: string) => Promise.resolve({ data: demoVehicles.find(v => v.id === id) }),
+  getVehicle: (id: string) => Promise.resolve({ data: demoVehicles.find(v => v._id === id) }),
   getBrands: () => Promise.resolve({ data: demoBrands }),
-  getBrand: (slug: string) => Promise.resolve({ data: demoBrands.find(b => b.slug === slug) }),
+  getBrand: (slug: string) => Promise.resolve({ data: demoBrands.find(b => b.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === slug) }),
   getVehiclesByBrand: (brandSlug: string) => {
-    const brand = demoBrands.find(b => b.slug === brandSlug);
+    const brand = demoBrands.find(b => b.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === brandSlug);
     const vehicles = demoVehicles.filter(v => v.brand === brand?.name);
     return Promise.resolve({ data: vehicles });
   },
