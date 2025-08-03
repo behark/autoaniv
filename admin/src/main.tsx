@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Admin, Resource, fetchUtils } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
-import { DirectionsCar, Category, Dashboard, ContactMail } from '@mui/icons-material';
+import { DirectionsCar, Category } from '@mui/icons-material';
 
 // Import components
 import VehicleList from './components/vehicles/VehicleList';
