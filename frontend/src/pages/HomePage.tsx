@@ -1,21 +1,10 @@
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import { brandsApi, vehiclesApi } from '@/services/api';
 import { motion } from 'framer-motion';
-import {
-  ArrowRight,
-  Award,
-  Car,
-  CreditCard,
-  Users as Handshake,
-  Shield,
-  Phone
-} from 'lucide-react';
+import { ArrowRight, Award, Car, CreditCard, Users as Handshake, Phone, Shield } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
-import { brandsApi, vehiclesApi } from '@/services/api';
-import type { Brand, Vehicle } from '@/types';
-
 export default function HomePage() {
   const [featuredVehicles, setFeaturedVehicles] = useState<any[]>([]);
   const [featuredBrands, setFeaturedBrands] = useState<any[]>([]);
