@@ -1,36 +1,36 @@
-import React, { useState, useMemo } from 'react';
 import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Chip,
-  Button,
-  Grid,
-  TextField,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Pagination,
-  IconButton,
-  Menu,
-  MenuItem as MenuItemAction,
-  ListItemIcon,
-  ListItemText,
-  Stack
+    Box,
+    Button,
+    Card,
+    CardContent,
+    CardMedia,
+    Chip,
+    FormControl,
+    Grid,
+    IconButton,
+    InputLabel,
+    ListItemIcon,
+    ListItemText,
+    Menu,
+    MenuItem,
+    MenuItem as MenuItemAction,
+    Pagination,
+    Select,
+    Stack,
+    TextField,
+    Typography
 } from '@mui/material';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Search,
-  MoreHorizontal,
-  Edit,
-  Delete,
-  Star,
-  Eye,
-  Heart
+    Delete,
+    Edit,
+    Eye,
+    Heart,
+    MoreHorizontal,
+    Search,
+    Star
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useMemo, useState } from 'react';
 
 interface Vehicle {
   id: string;

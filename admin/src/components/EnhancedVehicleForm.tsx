@@ -20,18 +20,18 @@ import {
     Typography
 } from '@mui/material';
 import {
-  Save,
-  Upload,
-  X,
-  Plus,
-  Image as ImageIcon,
-  DollarSign,
-  Car,
-  FileText,
-  Settings,
-  Eye,
-  EyeOff,
-  ChevronDown
+    Car,
+    ChevronDown,
+    DollarSign,
+    Eye,
+    EyeOff,
+    FileText,
+    Image as ImageIcon,
+    Plus,
+    Save,
+    Settings,
+    Upload,
+    X
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 

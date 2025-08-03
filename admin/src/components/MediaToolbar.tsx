@@ -1,26 +1,26 @@
-import React from 'react';
-import { 
-  Search, 
-  Grid, 
-  List,
-  Upload,
-  Download,
-  Trash2,
-  RefreshCw
-} from 'lucide-react';
-import { 
-  Box, 
-  TextField, 
-  Select, 
-  MenuItem, 
-  FormControl, 
-  InputLabel,
-  Button,
-  ButtonGroup,
-  Chip,
-  IconButton,
-  Tooltip
+import {
+    Box,
+    Button,
+    ButtonGroup,
+    Chip,
+    FormControl,
+    IconButton,
+    InputLabel,
+    MenuItem,
+    Select,
+    TextField,
+    Tooltip
 } from '@mui/material';
+import {
+    Download,
+    Grid,
+    List,
+    RefreshCw,
+    Search,
+    Trash2,
+    Upload
+} from 'lucide-react';
+import React from 'react';
 
 export interface MediaToolbarProps {
   searchTerm: string;

@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Box,
-  Typography,
-  Chip,
-  IconButton,
-  TextField,
-  Grid,
-  Divider
+    Box,
+    Button,
+    Chip,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Divider,
+    Grid,
+    IconButton,
+    TextField,
+    Typography
 } from '@mui/material';
-import {
-  X,
-  Download,
-  ExternalLink,
-  Edit3,
-  Copy,
-  Image as ImageIcon,
-  Video,
-  File
-} from 'lucide-react';
 import { motion } from 'framer-motion';
+import {
+    Copy,
+    Download,
+    Edit3,
+    ExternalLink,
+    File,
+    Image as ImageIcon,
+    Video,
+    X
+} from 'lucide-react';
+import React, { useState } from 'react';
 import { MediaFile } from '../types';
 
 export interface MediaPreviewProps {

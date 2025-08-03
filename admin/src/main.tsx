@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Admin, Resource, fetchUtils } from 'react-admin';
+import { Category, DirectionsCar } from '@mui/icons-material';
 import jsonServerProvider from 'ra-data-json-server';
-import { DirectionsCar, Category } from '@mui/icons-material';
+import React from 'react';
+import { Admin, Resource, fetchUtils } from 'react-admin';
+import ReactDOM from 'react-dom/client';
 
 // Import components
-import VehicleList from './components/vehicles/VehicleList';
-import VehicleEdit from './components/vehicles/VehicleEdit';
-import VehicleCreate from './components/vehicles/VehicleCreate';
 import BrandList from './components/brands/BrandList';
 import AdminDashboard from './components/Dashboard';
+import VehicleCreate from './components/vehicles/VehicleCreate';
+import VehicleEdit from './components/vehicles/VehicleEdit';
+import VehicleList from './components/vehicles/VehicleList';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
