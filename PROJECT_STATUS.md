@@ -2,10 +2,10 @@
 
 ## 📊 Project Overview
 
-**Business**: AutoAni - Premium Automotive Sales Platform  
-**Model**: Inspired by Sherreti.com's design and functionality  
-**Target Market**: Kosovo and Albanian-speaking regions  
-**Platform**: Full-stack web application with admin dashboard  
+**Business**: AutoAni - Premium Automotive Sales Platform
+**Model**: Inspired by Sherreti.com's design and functionality
+**Target Market**: Kosovo and Albanian-speaking regions
+**Platform**: Full-stack web application with admin dashboard
 
 ## 🏗️ Architecture Completed
 

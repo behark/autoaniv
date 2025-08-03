@@ -152,7 +152,7 @@ db.brands.insertMany([
   },
   {
     name: "BMW",
-    logo: "/brands/bmw.png", 
+    logo: "/brands/bmw.png",
     description: "Premium German luxury vehicles",
     featured: true,
     vehicleCount: 12
@@ -160,7 +160,7 @@ db.brands.insertMany([
   {
     name: "Audi",
     logo: "/brands/audi.png",
-    description: "German luxury automobile manufacturer", 
+    description: "German luxury automobile manufacturer",
     featured: true,
     vehicleCount: 10
   }
@@ -177,7 +177,7 @@ db.vehicles.insertOne({
   mileage: 5000,
   transmission: "Automatic",
   fuelType: "Petrol",
-  bodyType: "Sedan", 
+  bodyType: "Sedan",
   color: "Black",
   engineSize: 4.0,
   horsepower: 630,
@@ -223,7 +223,7 @@ After deploying the backend, update your frontend environment variables:
    Type: CNAME
    Name: www
    Value: your-site.netlify.app
-   
+
    Type: A
    Name: @
    Value: 104.198.14.52
@@ -243,7 +243,7 @@ In your backend, ensure CORS allows your domain:
 app.use(cors({
   origin: [
     'https://autoani.com',
-    'https://www.autoani.com', 
+    'https://www.autoani.com',
     'https://admin.autoani.com',
     'https://your-frontend.netlify.app',
     'https://your-admin.netlify.app'
