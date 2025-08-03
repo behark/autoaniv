@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { Route, Routes } from 'react-router-dom';
 
 // Layout components
-import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 // Lazy load pages for better performance
@@ -20,24 +20,24 @@ const BrandPage = lazy(() => import('@/pages/BrandPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 function App() {
-  const { t } = useTranslation();
+  useTranslation(); // Initialize translation
 
   return (
     <>
       <Helmet>
         <title>AutoAni - Premium Automotive Dealership</title>
-        <meta 
-          name="description" 
-          content="AutoAni - Leading automotive dealership in Kosovo. Premium vehicles from top brands including Mercedes, BMW, Audi, and more." 
+        <meta
+          name="description"
+          content="AutoAni - Leading automotive dealership in Kosovo. Premium vehicles from top brands including Mercedes, BMW, Audi, and more."
         />
-        <meta 
-          name="keywords" 
-          content="AutoAni, cars, automotive, luxury cars, Mercedes, BMW, Audi, Kosovo, dealership, vehicles" 
+        <meta
+          name="keywords"
+          content="AutoAni, cars, automotive, luxury cars, Mercedes, BMW, Audi, Kosovo, dealership, vehicles"
         />
         <meta property="og:title" content="AutoAni - Premium Automotive Dealership" />
-        <meta 
-          property="og:description" 
-          content="Discover luxury vehicles at AutoAni. Premium cars from top brands with exceptional service." 
+        <meta
+          property="og:description"
+          content="Discover luxury vehicles at AutoAni. Premium cars from top brands with exceptional service."
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://autoani.com" />
@@ -45,7 +45,7 @@ function App() {
 
       <div className="min-h-screen flex flex-col">
         <Header />
-        
+
         <main className="flex-1">
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>

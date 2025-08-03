@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { SlidersHorizontal } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Search, Filter, SlidersHorizontal } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 
-import { vehiclesApi } from '@/services/api';
-import type { Vehicle, VehicleFilter, PaginatedResponse } from '@/types';
-import VehicleCard from '@/components/vehicles/VehicleCard';
-import VehicleFilters from '@/components/vehicles/VehicleFilters';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import Pagination from '@/components/ui/Pagination';
+import VehicleCard from '@/components/vehicles/VehicleCard';
+import VehicleFilters from '@/components/vehicles/VehicleFilters';
+import type { Vehicle, VehicleFilter } from '@/types';
 
 export default function VehiclesPage() {
   const { t } = useTranslation();
@@ -44,25 +43,25 @@ export default function VehiclesPage() {
   useEffect(() => {
     const filters: VehicleFilter = {};
     const page = parseInt(searchParams.get('page') || '1');
-    
+
     // Extract filters from URL params
     if (searchParams.get('brand')) filters.brand = searchParams.get('brand')!;
     if (searchParams.get('search')) filters.search = searchParams.get('search')!;
     if (searchParams.get('priceFrom')) filters.priceFrom = parseInt(searchParams.get('priceFrom')!);
     if (searchParams.get('priceTo')) filters.priceTo = parseInt(searchParams.get('priceTo')!);
-    
+
     fetchVehicles(filters, page);
   }, [searchParams]);
 
   const handleFilterChange = (filters: VehicleFilter) => {
     const params = new URLSearchParams();
-    
+
     Object.entries(filters).forEach(([key, value]) => {
       if (value !== undefined && value !== '') {
         params.set(key, value.toString());
       }
     });
-    
+
     params.set('page', '1');
     setSearchParams(params);
   };
@@ -77,9 +76,9 @@ export default function VehiclesPage() {
     <>
       <Helmet>
         <title>{t('nav.vehicles')} - AutoAni</title>
-        <meta 
-          name="description" 
-          content="Browse our extensive collection of premium vehicles. Find your perfect car from top brands including Mercedes, BMW, Audi, and more." 
+        <meta
+          name="description"
+          content="Browse our extensive collection of premium vehicles. Find your perfect car from top brands including Mercedes, BMW, Audi, and more."
         />
       </Helmet>
 
@@ -109,7 +108,7 @@ export default function VehiclesPage() {
                   <span>Filters</span>
                 </button>
               </div>
-              
+
               <div className={`${showFilters ? 'block' : 'hidden'} lg:block`}>
                 <VehicleFilters onFilterChange={handleFilterChange} />
               </div>

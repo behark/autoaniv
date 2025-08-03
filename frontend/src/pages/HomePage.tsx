@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Shield, 
-  Award, 
-  Handshake, 
-  CreditCard,
-  Star,
-  Users,
+import {
+  ArrowRight,
+  Award,
+  Calendar,
   Car,
-  Calendar
+  CreditCard,
+  Users as Handshake,
+  Shield,
+  Star,
+  Users
 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-import { vehiclesApi, brandsApi } from '@/services/api';
-import type { Vehicle, Brand } from '@/types';
-import VehicleCard from '@/components/vehicles/VehicleCard';
 import BrandCard from '@/components/brands/BrandCard';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import VehicleCard from '@/components/vehicles/VehicleCard';
+import { brandsApi, vehiclesApi } from '@/services/api';
+import type { Brand, Vehicle } from '@/types';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export default function HomePage() {
           vehiclesApi.getFeatured(6),
           brandsApi.getFeatured()
         ]);
-        
+
         setFeaturedVehicles(vehiclesResponse.data);
         setFeaturedBrands(brandsResponse.data);
       } catch (error) {
@@ -89,22 +89,22 @@ export default function HomePage() {
     <>
       <Helmet>
         <title>AutoAni - Premium Automotive Dealership</title>
-        <meta 
-          name="description" 
-          content="AutoAni - Leading automotive dealership in Kosovo. Discover premium vehicles from top brands including Mercedes, BMW, Audi, and more." 
+        <meta
+          name="description"
+          content="AutoAni - Leading automotive dealership in Kosovo. Discover premium vehicles from top brands including Mercedes, BMW, Audi, and more."
         />
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10" />
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url("/hero-bg.jpg")'
           }}
         />
-        
+
         <div className="relative z-20 text-center text-white container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

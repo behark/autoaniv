@@ -173,5 +173,5 @@ export const demoApi = {
     }
     return Promise.resolve({ data: results });
   },
-  contactForm: (data: any) => Promise.resolve({ success: true, message: "Message sent successfully!" })
+  contactForm: (_data: any) => Promise.resolve({ success: true, message: "Message sent successfully!" })
 };
