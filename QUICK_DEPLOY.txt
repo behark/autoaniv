@@ -1,0 +1,52 @@
+🚀 AutoAni Quick Deployment Checklist
+==========================================
+
+✅ REPOSITORY READY: https://github.com/behark/autoaniv
+
+📋 DEPLOYMENT STEPS (15 minutes total)
+======================================
+
+🌐 STEP 1: Deploy Frontend (5 minutes)
+--------------------------------------
+1. In Netlify (already open): Click "New site from Git"
+2. Choose "GitHub" → Select "behark/autoaniv"
+3. Set these EXACT settings:
+   ✓ Base directory: frontend
+   ✓ Build command: npm run build
+   ✓ Publish directory: frontend/dist
+4. Click "Deploy site"
+5. ✅ DONE: Your main website will be live!
+
+👨‍💼 STEP 2: Deploy Admin Dashboard (3 minutes)
+----------------------------------------------
+1. Back in Netlify: Click "New site from Git" again
+2. Choose "GitHub" → Select "behark/autoaniv" (same repo)
+3. Set these EXACT settings:
+   ✓ Base directory: admin
+   ✓ Build command: npm run build
+   ✓ Publish directory: admin/dist
+4. Click "Deploy site"
+5. ✅ DONE: Your admin dashboard will be live!
+
+🔧 STEP 3: Deploy Backend API (7 minutes)
+-----------------------------------------
+1. Go to Railway: https://railway.app
+2. Sign up with GitHub
+3. "New Project" → "Deploy from GitHub repo" → "behark/autoaniv"
+4. Set root directory: backend
+5. Add these environment variables:
+   ✓ NODE_ENV=production
+   ✓ MONGODB_URI=mongodb+srv://autoani:pass@cluster.mongodb.net/autoani
+   ✓ JWT_SECRET=autoani-secret-2025
+6. Deploy
+7. ✅ DONE: Your API will be live!
+
+🎯 RESULT: You'll have 3 live URLs:
+==================================
+✓ Main Website: https://[name].netlify.app
+✓ Admin Dashboard: https://[admin-name].netlify.app
+✓ Backend API: https://[name].up.railway.app
+
+🚗 AutoAni is ready to go live! 🌟
+
+NEXT: Share your Netlify URLs when ready!
